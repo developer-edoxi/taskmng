@@ -17,6 +17,46 @@ public function gettasks()
 
 }
 
+
+public function getmytask($id)
+{
+
+
+        
+        $query=$this->db->query("select * from allocation a,tasks t,`user` u where a.userid=u.id and a.taskid=t.taskid and u.id=$id and t.status!='completed'");
+
+        return $query->result();
+
+
+}
+
+public function getcomptask($id)
+{
+
+
+        
+        $query=$this->db->query("select * from allocation a,tasks t,`user` u,taskcomments c where a.userid=u.id and a.taskid=t.taskid and c.taskid=t.taskid and u.id=$id and t.status='completed'");
+
+        return $query->result();
+
+
+}
+
+
+
+
+public function getassigndata($id)
+{
+
+
+        
+        $query=$this->db->query("select u.firstname,a.alocdate,a.status from allocation a,tasks t,`user` u where a.userid=u.id and a.taskid=t.taskid and t.taskid=$id");
+
+        return $query->result();
+
+
+}
+
 public function getmanagers()
 {
 
@@ -67,6 +107,18 @@ public function assigntask($data)
 
 }
 
+public function commenttask($data)
+{
+
+        
+        $response=$this->db->insert("taskcomments",$data);
+
+        return $response;
+       
+
+
+}
+
 public function updatetask($id)
 {
 
@@ -75,6 +127,25 @@ public function updatetask($id)
 
         return $response;
        
+
+
+}
+
+public function updatetaskcomplete($id)
+{
+
+        
+        $response=$this->db->query("update tasks set `status`='completed' where taskid=$id");
+
+        $response1=$this->db->query("update allocation set `status`='completed' where taskid=$id");
+
+        if(($response==true)and($response1==true)){
+
+                return true;
+        }else{
+
+                return false;
+        }
 
 
 }

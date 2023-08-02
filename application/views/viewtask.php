@@ -1,16 +1,4 @@
-<?php
 
-
-$msg=$this->session->flashdata('msg');
-
-if(isset($msg)){
-
-echo "<script>alert('$msg');</script>";
-
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,29 +7,30 @@ echo "<script>alert('$msg');</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="<?=base_url()?>images/favicon.ico">
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+    <!-- Option 1: Include in HTML -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
 
-	<link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    <title>CRMi - Dashboard  General Form Elements </title>
+
+    <title>CRMi - Dashboard  Blank Page </title>
   
 	<!-- Vendors Style-->
-	<link rel="stylesheet" href="src/css/vendors_css.css">
+	<link rel="stylesheet" href="<?=base_url()?>src/css/vendors_css.css">
 	  
 	<!-- Style-->    
-	<link rel="stylesheet" href="src/css/horizontal-menu.css"> 
-	<link rel="stylesheet" href="src/css/style.css">
-	<link rel="stylesheet" href="src/css/skin_color.css">
+	<link rel="stylesheet" href="<?=base_url()?>src/css/horizontal-menu.css"> 
+	<link rel="stylesheet" href="<?=base_url()?>src/css/style.css">
+	<link rel="stylesheet" href="<?=base_url()?>src/css/skin_color.css">
 
-    <style>
+	<style>
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
 
         /* The Modal (background) */
-        .modal,.modal1 {
+        .modal{
             display: none;
             /* Hidden by default */
             position: fixed;
@@ -74,7 +63,7 @@ echo "<script>alert('$msg');</script>";
         }
 
         /* The Close Button */
-        .close,.close1 {
+        .close {
             color: #aaaaaa;
             float: right;
             font-size: 28px;
@@ -82,18 +71,17 @@ echo "<script>alert('$msg');</script>";
         }
 
         .close:hover,
-        .close:focus,
-		.close1:hover,
-		.close1:focus {
+        .close:focus {
             color: #000;
             text-decoration: none;
             cursor: pointer;
         }
     </style>
 
+
 </head>
 <body class="layout-top-nav light-skin theme-primary fixed">
-	
+
 <div class="wrapper">
 	<div id="loader"></div>
 
@@ -104,12 +92,12 @@ echo "<script>alert('$msg');</script>";
 			<a href="index.html" class="logo">
 			  <!-- logo-->
 			  <div class="logo-mini w-30">
-				  <span class="light-logo"><img src="images/logo-letter.png" alt="logo"></span>
-				  <span class="dark-logo"><img src="images/logo-letter-white.png" alt="logo"></span>
+				  <span class="light-logo"><img src="<?=base_url()?>images/logo-letter.png" alt="logo"></span>
+				  <span class="dark-logo"><img src="<?=base_url()?>images/logo-letter-white.png" alt="logo"></span>
 			  </div>
 			  <div class="logo-lg">
-				  <span class="light-logo"><img src="images/logo-dark-text.png" alt="logo"></span>
-				  <span class="dark-logo"><img src="images/logo-light-text.png" alt="logo"></span>
+				  <span class="light-logo"><img src="<?=base_url()?>images/logo-dark-text.png" alt="logo"></span>
+				  <span class="dark-logo"><img src="<?=base_url()?>images/logo-light-text.png" alt="logo"></span>
 			  </div>
 			</a>	
 		</div>  
@@ -223,14 +211,14 @@ echo "<script>alert('$msg');</script>";
 
 				<li class="btn-group">
 					<a href="#" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon dropdown-toggle" data-bs-toggle="dropdown">
-						<img class="rounded" src="images/logo-letter.png" alt="">
+						<img class="rounded" src="<?=base_url()?>images/svg-icon/usa.svg" alt="">
 					</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/usa.svg" alt=""> English</a>
-						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/spain.svg" alt=""> Spanish</a>
-						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/ger.svg" alt=""> German</a>
-						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/jap.svg" alt=""> Japanese</a>
-						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/fra.svg" alt=""> French</a>
+						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="<?=base_url()?>images/svg-icon/usa.svg" alt=""> English</a>
+						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="<?=base_url()?>images/svg-icon/spain.svg" alt=""> Spanish</a>
+						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="<?=base_url()?>images/svg-icon/ger.svg" alt=""> German</a>
+						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="<?=base_url()?>images/svg-icon/jap.svg" alt=""> Japanese</a>
+						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="<?=base_url()?>images/svg-icon/fra.svg" alt=""> French</a>
 					</div>
 				</li>
 
@@ -248,7 +236,7 @@ echo "<script>alert('$msg');</script>";
 								<p class="pt-5 fs-14 mb-0 fw-700 text-primary">Johen Doe</p>
 								<small class="fs-10 mb-0 text-uppercase text-mute">Admin</small>
 							</div>
-							<img src="images/avatar/avatar-1.png" class="avatar rounded-10 bg-primary-light h-40 w-40" alt="" />
+							<img src="<?=base_url()?>images/avatar/avatar-1.png" class="avatar rounded-10 bg-primary-light h-40 w-40" alt="" />
 						</div>
 					</a>
 				</li>
@@ -457,176 +445,135 @@ echo "<script>alert('$msg');</script>";
 		<li><a href="email_index.html"><i class="icon-Mailbox"><span class="path1"></span><span class="path2"></span></i>Emails</a></li>
 	  </ul>
 	</nav>
-  
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 	  <div class="container-full">
-		<!-- Content Header (Page header) -->
+		<!-- Content Header (Page header) -->	  
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="me-auto">
-					<!-- <h3 class="page-title">General Form Elements</h3> -->
+					<h3 class="page-title">Task DashBoard</h3><i class='fab fa-500px'></i>
 					<div class="d-inline-block align-items-center">
-						<nav>
+						<!-- <nav>
 							<ol class="breadcrumb">
-								<!-- <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li> -->
-								<!-- <li class="breadcrumb-item" aria-current="page">Forms</li> -->
-								<!-- <li class="breadcrumb-item active" aria-current="page">General Form Elements</li> -->
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Extra</li>
+								<li class="breadcrumb-item active" aria-current="page">Project DashBoard</li>
 							</ol>
-						</nav>
+						</nav> -->
 					</div>
 				</div>
 				
 			</div>
-		</div>	  
+		</div>  
 
 		<!-- Main content -->
 		<section class="content">
-			<div class="row">			  
-				<div class="col-lg-5 col-12">
-					  <div class="box">
-						<div class="box-header with-border">
-						  <h4 class="box-title">Task</h4>
-						</div>
-						<!-- /.box-header -->
-						<form class="form" action="<?=base_url('Welcome/inserttask')?>" method="POST">
-							<div class="box-body">
-					
-								<div class="form-group">
-								  <label class="form-label">Subject</label>
-								  <input type="text" class="form-control" placeholder="Task Name" name="subject" required>
-								</div>
-								<div class="row">
-								
-								  <div class="col-md-12">
-									<div class="form-group">
-									  <label class="form-label">Created by</label>
-									  <select class="form-select" name="createdby" required>
-                                      <option selectDisabled>Select the creator</option>
-                                      <?php  
-                
-                                            foreach($manager as $value) 
-                                            {  
+		  <div class="row">
 
-                                                echo "<option value='$value->id'>$value->name</option>";
-
-                                            }
-
-                                        ?>
-										
-									  </select>
-									</div>
-								  </div>
-								</div>
-								<!-- <div class="form-group">
-								  <label class="form-label">Select File</label>
-								  <label class="file">
-									<input type="file" id="file">
-								  </label>
-								</div> -->
-                                <div class="form-group">
-                                <label class="form-label">Start Date</label>
-								<input class="form-control" type="date" name="sdate" id="sdate" min="2023-07-28" required>
-                                </div>
-                                <div class="form-group">
-                                <label class="form-label">Last Date</label>
-								<input class="form-control" type="date" name="ldate"  id="ldate" min="2023-07-28" required>
-                                </div>
-								<div class="form-group">
-								  <label class="form-label">About Task</label>
-								  <textarea rows="5" class="form-control" name="description" placeholder="About Task" required></textarea>
-								</div>
-							</div>
-							<!-- /.box-body -->
-							<div class="box-footer">
-								<!-- <button type="button" class="btn btn-warning me-1">
-								  <i class="ti-trash"></i> Cancel
-								</button> -->
-								<input type="submit" class="btn btn-primary" name="submit" value="Save">
-								  
-							
-							</div>  
-						</form>
-					  </div>
-					  <!-- /.box -->			
+			<div class="col-xl-6 connectedSortable">
+			  <div class="box box-solid box-warning">
+				<div class="box-header with-border">
+				  <h4 class="box-title">Current</h4>
+				  <ul class="box-controls pull-right">
+					<li><a class="box-btn-close" href="#"></a></li>
+					<li><a class="box-btn-slide" href="#"></a></li>	
+					<li><a class="box-btn-fullscreen" href="#"></a></li>
+				  </ul>
 				</div>
-				<div class="col-xl-7 col-12">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>CAPTION</th>
-                            <th>DESCRIPTION</th>
-                            <th>STARTING</th>
-                            <th>ENDING</th>
-							<th>CREATED BY</th>
-							<th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <?php  
+				<div class="box-body p-10">
+				  <ul class="todo-list">
+                  <?php  
+					$count=1;
+					foreach($mytask as $value) 
+					{  
+                        ?>
+					<li class='b-1 p-0 mb-15'>
+					  <div class='position-relative p-20'>
+						  <!-- drag handle -->
+						  <div class='handle handle2'></div>
+						  <!-- checkbox -->
+						  <input type='checkbox' id='chk<?=$count?>' value="<?=$value->taskid?>" dataval="<?=$value->userid?>" class='filled-in chk'>
+						  <label for='chk<?=$count?>' class='mb-0 h-15 ms-15'></label>
+						  <!-- todo text -->
+						  <span style="font-size:20px;"><?=$value->subject?></span>
+						  <!-- General tools such as edit or delete-->
+						  <!-- <div class='pull-right d-block text-dark flexbox'>
+							<a href='' data-bs-toggle='tooltip' data-container='body' title='' data-bs-original-title='Edit'><i class='fa fa-edit'></i></a>
+							<a href='' data-bs-toggle='tooltip' data-container='body' title='' data-bs-original-title='Remove'><i class='fa fa-trash-o'></i></a>
+						  </div> -->
+						  <div class='mt-5 ms-50 ps-5'><?=$value->description?></div>
+						  <div class='mt-5 ms-50 ps-5'><em>Allocated on: <?=$value->alocdate?></em></div>
+                          <div class='mt-5 ms-50 ps-5'><em>Last Date: <?=$value->lastdate?></em></div>
+						</div>
+					</li>
 
-							$ar=array();
-							$count=0;
-                            foreach($task as $value) 
-                            {  
-								$ar[$count]=$value->status;
-								
-								
-                            ?>
-
-                                    <tr>
-                                        <td><?=$value->subject?></td>
-                                        <td><?=$value->description?></td>
-                                        <td><?=$value->startdate?></td>
-                                        <td><?=$value->lastdate?></td>
-										<td><?=$value->name?></td>
-										<?php
-										
-										// echo $ar[$count];
-										
-										if($ar[$count]=="created")
-										{
-									
-									 	echo "<td><button type='button' name='forward' id='myBtn' dataval='$value->taskid' class='forward btn-primary'>Assign</button></td>";
-									
-										}else{
-
-											echo "<td><button type='button' name='forward' dataval='$value->taskid' class='backward btn-primary'>View</button></td>";
-
-										}
-
-										?>
-
-                                    </tr>
-                            <?php
-								$count++;
-                            }
-                            ?>
-                    </tbody>
-                </table>
-				</div>  
-
-				
-		    </div>
+                    <?php
+						$count++;
+						
+                        }	
+                ?>
+				  </ul>
+				</div>
+				<!-- /.box-body -->
+			  </div>
+			</div>
+			<div class="col-xl-6 connectedSortable">
+			  <div class="box box-solid box-success">
+				<div class="box-header with-border">
+				  <h4 class="box-title">Completed</h4>
+				  <ul class="box-controls pull-right">
+					<li><a class="box-btn-close" href="#"></a></li>
+					<li><a class="box-btn-slide" href="#"></a></li>	
+					<li><a class="box-btn-fullscreen" href="#"></a></li>
+				  </ul>
+				</div>
+				<div class="box-body p-0">
+				  <ul class="todo-list">
+				  <?php  
 			
-			<!--/.col (left) -->
-			<!-- right column -->
-			
-			<!--/.col (right) -->
+					foreach($comtask as $value) 
+					{  
+                        ?>
+					<li class="p-15">
+					  <div class="box p-15 mb-0 d-block bb-2 border-danger">
+						 <!-- drag handle -->
+						  <!-- <span class="handle">
+							<i class="fa fa-ellipsis-v"></i>
+							<i class="fa fa-ellipsis-v"></i>
+						  </span> -->
+						  <!-- checkbox -->
+						  
+						  <span style="font-size:20px;"><?=$value->subject?></span>
+						  <div><?=$value->description?></div>
+						  <div><em>Allocated On: <?=$value->alocdate?></em></div>
+                          <div><em>Completed On: <?=$value->commentdate?></em></div>
+						
+					  </div>
+					</li>
+					<?php
+						
+                        }
+
+                ?>
+				  </ul>
+				</div>
+				<!-- /.box-body -->
+			  </div>
+			</div>
 		  </div>
-		  <!-- /.row -->
-
 		</section>
 		<!-- /.content -->
 	  </div>
   </div>
   <!-- /.content-wrapper -->
-  
+ 
    <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">
         <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
 		  <li class="nav-item">
-			<a class="nav-link" href="#">Purchase Now</a>
+			<!-- <a class="nav-link" href="#">Purchase Now</a> -->
 		  </li>
 		</ul>
     </div>
@@ -725,7 +672,7 @@ echo "<script>alert('$msg');</script>";
                             <h5 class="fw-500 mb-15">System Messages</h5>
                             <div class="d-flex align-items-center mb-30">
                                 <div class="me-15 bg-lightest h-50 w-50 l-h-50 rounded text-center">
-                                      <img src="images/svg-icon/color-svg/001-glass.svg" class="h-30" alt="">
+                                      <img src="<?=base_url()?>images/svg-icon/color-svg/001-glass.svg" class="h-30" alt="">
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 me-2 fw-500">
                                     <a href="#" class="text-dark hover-primary mb-1 fs-16">Duis faucibus lorem</a>
@@ -735,7 +682,7 @@ echo "<script>alert('$msg');</script>";
                             </div>
                             <div class="d-flex align-items-center mb-30">
                                 <div class="me-15 bg-lightest h-50 w-50 l-h-50 rounded text-center">
-                                      <img src="images/svg-icon/color-svg/002-google.svg" class="h-30" alt="">
+                                      <img src="<?=base_url()?>images/svg-icon/color-svg/002-google.svg" class="h-30" alt="">
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 me-2 fw-500">
                                     <a href="#" class="text-dark hover-danger mb-1 fs-16">Mauris varius augue</a>
@@ -745,7 +692,7 @@ echo "<script>alert('$msg');</script>";
                             </div>
                             <div class="d-flex align-items-center mb-30">
                                 <div class="me-15 bg-lightest h-50 w-50 l-h-50 rounded text-center">
-                                      <img src="images/svg-icon/color-svg/003-settings.svg" class="h-30" alt="">
+                                      <img src="<?=base_url()?>images/svg-icon/color-svg/003-settings.svg" class="h-30" alt="">
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 me-2 fw-500">
                                     <a href="#" class="text-dark hover-success mb-1 fs-16">Aliquam in magna</a>
@@ -755,7 +702,7 @@ echo "<script>alert('$msg');</script>";
                             </div>
                             <div class="d-flex align-items-center mb-30">
                                 <div class="me-15 bg-lightest h-50 w-50 l-h-50 rounded text-center">
-                                      <img src="images/svg-icon/color-svg/004-dad.svg" class="h-30" alt="">
+                                      <img src="<?=base_url()?>images/svg-icon/color-svg/004-dad.svg" class="h-30" alt="">
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 me-2 fw-500">
                                     <a href="#" class="text-dark hover-info mb-1 fs-16">Phasellus venenatis nisi</a>
@@ -765,7 +712,7 @@ echo "<script>alert('$msg');</script>";
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="me-15 bg-lightest h-50 w-50 l-h-50 rounded text-center">
-                                      <img src="images/svg-icon/color-svg/005-paint-palette.svg" class="h-30" alt="">
+                                      <img src="<?=base_url()?>images/svg-icon/color-svg/005-paint-palette.svg" class="h-30" alt="">
                                 </div>
                                 <div class="d-flex flex-column flex-grow-1 me-2 fw-500">
                                     <a href="#" class="text-dark hover-warning mb-1 fs-16">Vivamus consectetur</a>
@@ -1024,7 +971,7 @@ echo "<script>alert('$msg');</script>";
 			</div>
             <div>
                 <div class="d-flex flex-row">
-                    <div class=""><img src="images/avatar/avatar-2.png" alt="user" class="rounded bg-danger-light w-150" width="100"></div>
+                    <div class=""><img src="<?=base_url()?>images/avatar/avatar-2.png" alt="user" class="rounded bg-danger-light w-150" width="100"></div>
                     <div class="ps-20">
                         <h5 class="mb-0">Johen Doe</h5>
                         <p class="my-5 text-fade">Web Designer</p>
@@ -1191,7 +1138,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-1.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-1.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>
 			  <div class="dropdown-divider"></div>
@@ -1212,7 +1159,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-2.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-2.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>
 			  <div class="dropdown-divider"></div>
@@ -1233,7 +1180,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-3.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-3.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>
 			  <div class="dropdown-divider"></div>
@@ -1254,7 +1201,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-4.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-4.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>
 			  <div class="dropdown-divider"></div> 
@@ -1275,7 +1222,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-5.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-5.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>
 			  <div class="dropdown-divider"></div> 
@@ -1296,7 +1243,7 @@ echo "<script>alert('$msg');</script>";
 						</div>
 					</div>
 					<a href="#" class="flex-shrink-0">
-						<img src="images/product/product-6.png" class="avatar h-100 w-100" alt="" />
+						<img src="<?=base_url()?>images/product/product-6.png" class="avatar h-100 w-100" alt="" />
 					</a>
 				</div>  
 		  </div>
@@ -1319,195 +1266,238 @@ echo "<script>alert('$msg');</script>";
   <!-- /quick_shop_toggle -->
   
 </div>
-
-
-<div id="myModal1" class="modal">
-
-	<!-- Modal content -->
-	<div class="modal-content">
-			<span class="close1">&times;</span>
-		<div class="demo">
-				<h1>Assigned Details</h1>
-				<h4 id="fullname"></h4>
-				<h4 id="alocdate"></h4>
-				<h4 id="status"></h4>
+<!-- ./wrapper -->
+	
+	<!-- ./side demo panel -->
+	<!-- <div class="sticky-toolbar">	    
+	    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now" class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+	    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Image"></span>
+		</a>
+	    <a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
+			<span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+	</div> -->
+	<!-- Sidebar -->
+	
+	<!-- <div id="chat-box-body">
+		<div id="chat-circle" class="waves-effect waves-circle btn btn-circle btn-sm btn-warning l-h-50">
+            <div id="chat-overlay"></div>
+            <span class="icon-Group-chat fs-18"><span class="path1"></span><span class="path2"></span></span>
 		</div>
-	</div>    
-</div>
 
+		<div class="chat-box">
+            <div class="chat-box-header p-15 d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button class="waves-effect waves-circle btn btn-circle btn-primary-light h-40 w-40 rounded-circle l-h-45" type="button" data-bs-toggle="dropdown">
+                      <span class="icon-Add-user fs-22"><span class="path1"></span><span class="path2"></span></span>
+                  </button>
+                  <div class="dropdown-menu min-w-200">
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Color me-15"></span>
+                        New Group</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Clipboard me-15"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                        Contacts</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Group me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Groups</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Active-call me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Calls</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Settings1 me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Settings</a>
+                    <div class="dropdown-divider"></div>
+					<a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Question-circle me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Help</a>
+					<a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Notifications me-15"><span class="path1"></span><span class="path2"></span></span> 
+                        Privacy</a>
+                  </div>
+                </div>
+                <div class="text-center flex-grow-1">
+                    <div class="text-dark fs-18">Mayra Sibley</div>
+                    <div>
+                        <span class="badge badge-sm badge-dot badge-primary"></span>
+                        <span class="text-muted fs-12">Active</span>
+                    </div>
+                </div>
+                <div class="chat-box-toggle">
+                    <button id="chat-box-toggle" class="waves-effect waves-circle btn btn-circle btn-danger-light h-40 w-40 rounded-circle l-h-45" type="button">
+                      <span class="icon-Close fs-22"><span class="path1"></span><span class="path2"></span></span>
+                    </button>                    
+                </div>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay">   
+                </div>
+                <div class="chat-logs">
+                    <div class="chat-msg user">
+                        <div class="d-flex align-items-center">
+                            <span class="msg-avatar">
+                                <img src="<?=base_url()?>images/avatar/2.jpg" class="avatar avatar-lg">
+                            </span>
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">Mayra Sibley</a>
+                                <p class="text-muted fs-12 mb-0">2 Hours</p>
+                            </div>
+                        </div>
+                        <div class="cm-msg-text">
+                            Hi there, I'm Jesse and you?
+                        </div>
+                    </div>
+                    <div class="chat-msg self">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">You</a>
+                                <p class="text-muted fs-12 mb-0">3 minutes</p>
+                            </div>
+                            <span class="msg-avatar">
+                                <img src="<?=base_url()?>images/avatar/3.jpg" class="avatar avatar-lg">
+                            </span>
+                        </div>
+                        <div class="cm-msg-text">
+                           My name is Anne Clarc.         
+                        </div>        
+                    </div>
+                    <div class="chat-msg user">
+                        <div class="d-flex align-items-center">
+                            <span class="msg-avatar">
+                                <img src="<?=base_url()?>images/avatar/2.jpg" class="avatar avatar-lg">
+                            </span>
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">Mayra Sibley</a>
+                                <p class="text-muted fs-12 mb-0">40 seconds</p>
+                            </div>
+                        </div>
+                        <div class="cm-msg-text">
+                            Nice to meet you Anne.<br>How can i help you?
+                        </div>
+                    </div>
+                </div><!--chat-log -->
+            <!-- </div>
+            <div class="chat-input">      
+                <form>
+                    <input type="text" id="chat-input" placeholder="Send a message..."/>
+                    <button type="submit" class="chat-submit" id="chat-submit">
+                        <span class="icon-Send fs-22"></span>
+                    </button>
+                </form>      
+            </div>
+		</div>
+	</div>  -->
 
+	<div id="myModal" class="modal">
 
-<div id="myModal" class="modal">
+<!-- Modal content -->
+<div class="modal-content">
+	  <span class="close">&times;</span>
+	<div class="demo">
 
-	<!-- Modal content -->
-	<div class="modal-content">
-  		<span class="close">&times;</span>
-		<div class="demo">
-
-			<form class="form" action="<?=base_url('Welcome/assigntask')?>" method="POST">
-										<div class="box-body">
-								
-										
-											<div class="row">
-											<div class="col-md-12">
-											<input type="hidden" class="form-control" id="taskid"  name="taskid" value="0" required>
-												<div class="form-group">
-												<label class="form-label">Assigned To</label>
-												<select class="form-select" name="assignto" required>
-												<option selectDisabled>Select to Assign</option>
-												<?php  
+		<form class="form" action="<?=base_url('Welcome/updateassigntask')?>" method="POST">
+									<div class="box-body">
 							
-														foreach($employee as $value) 
-														{  
-
-															echo "<option value='$value->id'>$value->firstname</option>";
-
-														}
-
-													?>
-													
-												</select>
-												</div>
-											</div>
-											</div>
-											
-										</div>
 									
-										<div class="box-footer">
-											
-											<input type="submit" class="btn btn-primary" name="submit" value="Assign">
-											
-										</div>  
-			</form>
+										<div class="row">
+										<div class="col-md-12">
+										<input type="hidden" class="form-control" id="taskid"  name="taskid" value="0" required>
+										<input type="hidden" class="form-control" id="userid"  name="userid" value="0" required>
+											<div class="form-group">
+											<textarea rows="5" class="form-control" name="description" placeholder="Work Description" required></textarea>
+											</div>
+										</div>
+										</div>
+										
+									</div>
+								
+									<div class="box-footer">
+										
+										<input type="submit" class="btn btn-primary" name="submit" value="Update">
+										
+									</div>  
+		</form>
 
 </div>
-</div>
-
-</div>
-
-
 	
 	<!-- Page Content overlay -->
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
-<script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
 	
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
 	<!-- Vendor JS -->
-	<script src="src/js/vendors.min.js"></script>
-	<script src="src/js/pages/chat-popup.js"></script>
-    <script src="assets/icons/feather-icons/feather.min.js"></script>	
+	<script src="<?=base_url()?>src/js/vendors.min.js"></script>
+	<script src="<?=base_url()?>src/js/pages/chat-popup.js"></script>
+    <script src="<?=base_url()?>assets/icons/feather-icons/feather.min.js"></script>	
+    <script src="<?=base_url()?>assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	</script>
 	
 	<!-- CRMi App -->
-	<script src="src/js/jquery.smartmenus.js"></script>
-	<script src="src/js/menus.js"></script>
-	<script src="src/js/template.js"></script>
+	<script src="<?=base_url()?>src/js/jquery.smartmenus.js"></script>
+	<script src="<?=base_url()?>src/js/menus.js"></script>
+	<script src="<?=base_url()?>src/js/template.js"></script>
 
-	<script>
-
-function loadDoc(c) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-		var ar=JSON.parse(this.responseText);
-		var obj=ar[ar.length-1];
-	  document.getElementById("fullname").innerHTML="Employee Name: "+obj.firstname;
-      document.getElementById("alocdate").innerHTML="Allocated Date: "+obj.alocdate;
-      document.getElementById("status").innerHTML="Status: "+obj.status; 
-    }
-  };
-  xhttp.open("GET", "Welcome/getdata?q=" +c, true);
-  xhttp.send();
-}
+	<script src="<?=base_url()?>src/js/pages/extra_taskboard.js"></script>
 
 
 
-var span = document.getElementsByClassName("close")[0];
 
-var span1 = document.getElementsByClassName("close1")[0];
+<script>
 
 var modal = document.getElementById("myModal");
 
-var modal1 = document.getElementById("myModal1");
-
-$(document).ready(function(){
-  
-new DataTable('#example');
-
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
-var yyyy = today.getFullYear();
-
-if(dd<10){
-  dd='0'+dd
-} 
-if(mm<10){
-  mm='0'+mm
-} 
-
-today = yyyy+'-'+mm+'-'+dd;
-
-document.getElementById("sdate").setAttribute("min", today);
-document.getElementById("ldate").setAttribute("min", today);
-
-
-});
+var close = document.getElementsByClassName("close")[0];
 
 $(function () {
-        $(".forward").click(function () {
+        $(".chk").click(function () {
 
-            modal.style.display = "block";
+            var span = $(this).attr("value");
 
-			var c=$(this).attr("dataval");
+			var span1 = $(this).attr("dataval");
 
-			document.getElementById("taskid").value=c;
+            // alert(span);
 
-			console.log(c);
+			modal.style.display = "block";
+
+			document.getElementById("taskid").value=span;
+
+			document.getElementById("userid").value=span1;
+
+			
 
   
         });
     });
 
-$(function () {
-        $(".backward").click(function () {
-
-            modal1.style.display = "block";
-
-			var c=$(this).attr("dataval");
-
-			console.log(c);
-
-			loadDoc(c);
-
- 
-        });
-    });
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+	window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
-  }else if(event.target == modal1) {
-	
-	modal1.style.display = "none";
+
+	var inp = document.querySelectorAll('input:checked');
+
+	inp[0].checked=false;
 
   }
 }
 
+close.onclick = function() {
+  
+	modal.style.display = "none";
+
+	var inp = document.querySelectorAll('input:checked');
+
+	inp[0].checked=false;
+
+
+
+}
+
 </script>
-	
-	
+
+
 </body>
 </html>
-
-

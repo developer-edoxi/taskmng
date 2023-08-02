@@ -1,16 +1,4 @@
-<?php
 
-
-$msg=$this->session->flashdata('msg');
-
-if(isset($msg)){
-
-echo "<script>alert('$msg');</script>";
-
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +9,7 @@ echo "<script>alert('$msg');</script>";
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
 
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
-
-	<link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <title>CRMi - Dashboard  General Form Elements </title>
+    <title>CRMi - Dashboard  Blank Page </title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="src/css/vendors_css.css">
@@ -33,67 +17,11 @@ echo "<script>alert('$msg');</script>";
 	<!-- Style-->    
 	<link rel="stylesheet" href="src/css/horizontal-menu.css"> 
 	<link rel="stylesheet" href="src/css/style.css">
-	<link rel="stylesheet" href="src/css/skin_color.css">
-
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* The Modal (background) */
-        .modal,.modal1 {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 200px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 70%;
-        }
-
-        /* The Close Button */
-        .close,.close1 {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus,
-		.close1:hover,
-		.close1:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+	<link rel="stylesheet" href="src/css/skin_color.css">	
 
 </head>
 <body class="layout-top-nav light-skin theme-primary fixed">
-	
+
 <div class="wrapper">
 	<div id="loader"></div>
 
@@ -223,7 +151,7 @@ echo "<script>alert('$msg');</script>";
 
 				<li class="btn-group">
 					<a href="#" class="waves-effect waves-light nav-link btn-primary-light svg-bt-icon dropdown-toggle" data-bs-toggle="dropdown">
-						<img class="rounded" src="images/logo-letter.png" alt="">
+						<img class="rounded" src="images/svg-icon/usa.svg" alt="">
 					</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item my-5" href="#"><img class="w-20 rounded me-10" src="images/svg-icon/usa.svg" alt=""> English</a>
@@ -457,171 +385,222 @@ echo "<script>alert('$msg');</script>";
 		<li><a href="email_index.html"><i class="icon-Mailbox"><span class="path1"></span><span class="path2"></span></i>Emails</a></li>
 	  </ul>
 	</nav>
-  
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
 	  <div class="container-full">
-		<!-- Content Header (Page header) -->
+		<!-- Content Header (Page header) -->	  
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="me-auto">
-					<!-- <h3 class="page-title">General Form Elements</h3> -->
+					<h3 class="page-title">Task DashBoard</h3>
 					<div class="d-inline-block align-items-center">
-						<nav>
+						<!-- <nav>
 							<ol class="breadcrumb">
-								<!-- <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li> -->
-								<!-- <li class="breadcrumb-item" aria-current="page">Forms</li> -->
-								<!-- <li class="breadcrumb-item active" aria-current="page">General Form Elements</li> -->
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Extra</li>
+								<li class="breadcrumb-item active" aria-current="page">Project DashBoard</li>
 							</ol>
-						</nav>
+						</nav> -->
 					</div>
 				</div>
 				
 			</div>
-		</div>	  
+		</div>  
 
 		<!-- Main content -->
 		<section class="content">
-			<div class="row">			  
-				<div class="col-lg-5 col-12">
-					  <div class="box">
-						<div class="box-header with-border">
-						  <h4 class="box-title">Task</h4>
-						</div>
-						<!-- /.box-header -->
-						<form class="form" action="<?=base_url('Welcome/inserttask')?>" method="POST">
-							<div class="box-body">
-					
-								<div class="form-group">
-								  <label class="form-label">Subject</label>
-								  <input type="text" class="form-control" placeholder="Task Name" name="subject" required>
-								</div>
-								<div class="row">
-								
-								  <div class="col-md-12">
-									<div class="form-group">
-									  <label class="form-label">Created by</label>
-									  <select class="form-select" name="createdby" required>
-                                      <option selectDisabled>Select the creator</option>
-                                      <?php  
-                
-                                            foreach($manager as $value) 
-                                            {  
+		  <div class="row">
 
-                                                echo "<option value='$value->id'>$value->name</option>";
-
-                                            }
-
-                                        ?>
-										
-									  </select>
-									</div>
-								  </div>
-								</div>
-								<!-- <div class="form-group">
-								  <label class="form-label">Select File</label>
-								  <label class="file">
-									<input type="file" id="file">
-								  </label>
-								</div> -->
-                                <div class="form-group">
-                                <label class="form-label">Start Date</label>
-								<input class="form-control" type="date" name="sdate" id="sdate" min="2023-07-28" required>
-                                </div>
-                                <div class="form-group">
-                                <label class="form-label">Last Date</label>
-								<input class="form-control" type="date" name="ldate"  id="ldate" min="2023-07-28" required>
-                                </div>
-								<div class="form-group">
-								  <label class="form-label">About Task</label>
-								  <textarea rows="5" class="form-control" name="description" placeholder="About Task" required></textarea>
-								</div>
-							</div>
-							<!-- /.box-body -->
-							<div class="box-footer">
-								<!-- <button type="button" class="btn btn-warning me-1">
-								  <i class="ti-trash"></i> Cancel
-								</button> -->
-								<input type="submit" class="btn btn-primary" name="submit" value="Save">
-								  
-							
-							</div>  
-						</form>
-					  </div>
-					  <!-- /.box -->			
+			<div class="col-xl-6 connectedSortable">
+			  <div class="box box-solid box-warning">
+				<div class="box-header with-border">
+				  <h4 class="box-title">In Progress</h4>
+				  <ul class="box-controls pull-right">
+					<li><a class="box-btn-close" href="#"></a></li>
+					<li><a class="box-btn-slide" href="#"></a></li>	
+					<li><a class="box-btn-fullscreen" href="#"></a></li>
+				  </ul>
 				</div>
-				<div class="col-xl-7 col-12">
-                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>CAPTION</th>
-                            <th>DESCRIPTION</th>
-                            <th>STARTING</th>
-                            <th>ENDING</th>
-							<th>CREATED BY</th>
-							<th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <?php  
+				<div class="box-body p-10">
+				  <ul class="todo-list">
+					<li class="b-1 p-0 mb-15">
+					  <div class="position-relative p-20">
+						  <!-- drag handle -->
+						  <div class="handle handle2"></div>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_19" class="filled-in">
+						  <label for="basic_checkbox_19" class="mb-0 h-15 ms-15"></label>
+						  <!-- todo text -->
+						  <span class="text-line fs-18">Phasellus interdum</span>
+						  <!-- General tools such as edit or delete-->
+						  <div class="pull-right d-block text-dark flexbox">
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Edit"><i class="fa fa-edit"></i></a>
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Remove"><i class="fa fa-trash-o"></i></a>
+						  </div>
+						  <div class="mt-5 ms-50 ps-5">Sed ut perspiciatis unde omnis iste natus error sit.</div>
+						  <div class="mt-5 ms-50 ps-5"><em>21/06/2018</em></div>
+						</div>
+					</li>
+					<li class="b-1 p-0 mb-15">
+					  <div class="position-relative p-20">
+						  <!-- drag handle -->
+						  <div class="handle handle2"></div>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_20" class="filled-in">
+						  <label for="basic_checkbox_20" class="mb-0 h-15 ms-15"></label>
+						  <!-- todo text -->
+						  <span class="text-line fs-18">Floor cool cinders</span>
+						  <!-- General tools such as edit or delete-->
+						  <div class="pull-right d-block text-dark flexbox">
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Edit"><i class="fa fa-edit"></i></a>
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Remove"><i class="fa fa-trash-o"></i></a>
+						  </div>
+						  <div class="mt-5 ms-50 ps-5">Sed ut perspiciatis unde omnis iste natus error sit.</div>
+						  <div class="mt-5 ms-50 ps-5"><em>21/06/2018</em></div>
+						</div>
+					</li>
+					<li class="b-1 p-0 mb-15">
+					  <div class="position-relative p-20">
+						  <!-- drag handle -->
+						  <div class="handle handle2"></div>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_21" class="filled-in">
+						  <label for="basic_checkbox_21" class="mb-0 h-15 ms-15"></label>
+						  <!-- todo text -->
+						  <span class="text-line fs-18">Floor cool cinders</span>
+						  <!-- General tools such as edit or delete-->
+						  <div class="pull-right d-block text-dark flexbox">
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Edit"><i class="fa fa-edit"></i></a>
+							<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Remove"><i class="fa fa-trash-o"></i></a>
+						  </div>
+						  <div class="mt-5 ms-50 ps-5">Sed ut perspiciatis unde omnis iste natus error sit.</div>
+						  <div class="mt-5 ms-50 ps-5"><em>21/06/2018</em></div>
+						</div>
+					</li>
 
-							$ar=array();
-							$count=0;
-                            foreach($task as $value) 
-                            {  
-								$ar[$count]=$value->status;
-								
-								
-                            ?>
+				  </ul>
+				</div>
+				<!-- /.box-body -->
+			  </div>
+			</div>
+			<div class="col-xl-6 connectedSortable">
+			  <div class="box box-solid box-success">
+				<div class="box-header with-border">
+				  <h4 class="box-title">Complete</h4>
+				  <ul class="box-controls pull-right">
+					<li><a class="box-btn-close" href="#"></a></li>
+					<li><a class="box-btn-slide" href="#"></a></li>	
+					<li><a class="box-btn-fullscreen" href="#"></a></li>
+				  </ul>
+				</div>
+				<div class="box-body p-0">
+				  <ul class="todo-list">
+					<li class="p-15">
+					  <div class="box p-15 mb-0 d-block bb-2 border-danger">
+						 <!-- drag handle -->
+						  <span class="handle">
+							<i class="fa fa-ellipsis-v"></i>
+							<i class="fa fa-ellipsis-v"></i>
+						  </span>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_22" class="filled-in">
+						  <label for="basic_checkbox_22" class="mb-0 h-15 ms-15"></label>
+						  <span class="pull-right badge badge-danger">Urgent</span>
+						  <span class="fs-18 text-line"><a href="">Nulla vitae purus</a> </span>
+						  <ul class="list-inline mb-0 mt-15 ms-30">
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Username">
+									<img src="images/avatar/1.jpg" alt="img" class="avatar avatar-sm">
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="5 Tasks">
+									<i class="mdi mdi-format-align-left"></i>
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="3 Comments">
+									<i class="mdi mdi-comment"></i>
+								</a>
+							</li>
+						  </ul>
+					  </div>
+					</li>
+					<li class="p-15">
+					  <div class="box p-15 mb-0 d-block bb-2 border-warning">
+						 <!-- drag handle -->
+						  <span class="handle">
+							<i class="fa fa-ellipsis-v"></i>
+							<i class="fa fa-ellipsis-v"></i>
+						  </span>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_23" class="filled-in">
+						  <label for="basic_checkbox_23" class="mb-0 h-15 ms-15"></label>
+						  <span class="pull-right badge badge-warning">High</span>
+						  <span class="fs-18 text-line"><a href="">Maecenas scelerisque</a> </span>
+						  <ul class="list-inline mb-0 mt-15 ms-30">
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Username">
+									<img src="images/avatar/2.jpg" alt="img" class="avatar avatar-sm">
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="5 Tasks">
+									<i class="mdi mdi-format-align-left"></i>
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="3 Comments">
+									<i class="mdi mdi-comment"></i>
+								</a>
+							</li>
+						  </ul>
+					  </div>
+					</li>
+					<li class="p-15">
+					  <div class="box p-15 mb-0 d-block bb-2 border-secondary">
+						 <!-- drag handle -->
+						  <span class="handle">
+							<i class="fa fa-ellipsis-v"></i>
+							<i class="fa fa-ellipsis-v"></i>
+						  </span>
+						  <!-- checkbox -->
+						  <input type="checkbox" id="basic_checkbox_24" class="filled-in">
+						  <label for="basic_checkbox_24" class="mb-0 h-15 ms-15"></label>
+						  <span class="fs-18 text-line"><a href="">Vivamus nec orci</a> </span>
+						  <ul class="list-inline mb-0 mt-15 ms-30">
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="Username">
+									<img src="images/avatar/3.jpg" alt="img" class="avatar avatar-sm">
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="5 Tasks">
+									<i class="mdi mdi-format-align-left"></i>
+								</a>
+							</li>
+							<li>
+								<a href="" data-bs-toggle="tooltip" data-container="body" title="" data-bs-original-title="3 Comments">
+									<i class="mdi mdi-comment"></i>
+								</a>
+							</li>
+						  </ul>
+					  </div>
+					</li>
 
-                                    <tr>
-                                        <td><?=$value->subject?></td>
-                                        <td><?=$value->description?></td>
-                                        <td><?=$value->startdate?></td>
-                                        <td><?=$value->lastdate?></td>
-										<td><?=$value->name?></td>
-										<?php
-										
-										// echo $ar[$count];
-										
-										if($ar[$count]=="created")
-										{
-									
-									 	echo "<td><button type='button' name='forward' id='myBtn' dataval='$value->taskid' class='forward btn-primary'>Assign</button></td>";
-									
-										}else{
-
-											echo "<td><button type='button' name='forward' dataval='$value->taskid' class='backward btn-primary'>View</button></td>";
-
-										}
-
-										?>
-
-                                    </tr>
-                            <?php
-								$count++;
-                            }
-                            ?>
-                    </tbody>
-                </table>
-				</div>  
-
-				
-		    </div>
-			
-			<!--/.col (left) -->
-			<!-- right column -->
-			
-			<!--/.col (right) -->
+				  </ul>
+				</div>
+				<!-- /.box-body -->
+			  </div>
+			</div>
 		  </div>
-		  <!-- /.row -->
-
 		</section>
 		<!-- /.content -->
 	  </div>
   </div>
   <!-- /.content-wrapper -->
-  
+ 
    <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">
         <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
@@ -1319,195 +1298,150 @@ echo "<script>alert('$msg');</script>";
   <!-- /quick_shop_toggle -->
   
 </div>
-
-
-<div id="myModal1" class="modal">
-
-	<!-- Modal content -->
-	<div class="modal-content">
-			<span class="close1">&times;</span>
-		<div class="demo">
-				<h1>Assigned Details</h1>
-				<h4 id="fullname"></h4>
-				<h4 id="alocdate"></h4>
-				<h4 id="status"></h4>
+<!-- ./wrapper -->
+	
+	<!-- ./side demo panel -->
+	<!-- <div class="sticky-toolbar">	    
+	    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now" class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+	    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Portfolio" class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Image"></span>
+		</a>
+	    <a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat" class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
+			<span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+	</div> -->
+	<!-- Sidebar -->
+	
+	<div id="chat-box-body">
+		<div id="chat-circle" class="waves-effect waves-circle btn btn-circle btn-sm btn-warning l-h-50">
+            <div id="chat-overlay"></div>
+            <span class="icon-Group-chat fs-18"><span class="path1"></span><span class="path2"></span></span>
 		</div>
-	</div>    
-</div>
 
-
-
-<div id="myModal" class="modal">
-
-	<!-- Modal content -->
-	<div class="modal-content">
-  		<span class="close">&times;</span>
-		<div class="demo">
-
-			<form class="form" action="<?=base_url('Welcome/assigntask')?>" method="POST">
-										<div class="box-body">
-								
-										
-											<div class="row">
-											<div class="col-md-12">
-											<input type="hidden" class="form-control" id="taskid"  name="taskid" value="0" required>
-												<div class="form-group">
-												<label class="form-label">Assigned To</label>
-												<select class="form-select" name="assignto" required>
-												<option selectDisabled>Select to Assign</option>
-												<?php  
-							
-														foreach($employee as $value) 
-														{  
-
-															echo "<option value='$value->id'>$value->firstname</option>";
-
-														}
-
-													?>
-													
-												</select>
-												</div>
-											</div>
-											</div>
-											
-										</div>
-									
-										<div class="box-footer">
-											
-											<input type="submit" class="btn btn-primary" name="submit" value="Assign">
-											
-										</div>  
-			</form>
-
-</div>
-</div>
-
-</div>
-
-
+		<div class="chat-box">
+            <div class="chat-box-header p-15 d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button class="waves-effect waves-circle btn btn-circle btn-primary-light h-40 w-40 rounded-circle l-h-45" type="button" data-bs-toggle="dropdown">
+                      <span class="icon-Add-user fs-22"><span class="path1"></span><span class="path2"></span></span>
+                  </button>
+                  <div class="dropdown-menu min-w-200">
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Color me-15"></span>
+                        New Group</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Clipboard me-15"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                        Contacts</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Group me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Groups</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Active-call me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Calls</a>
+                    <a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Settings1 me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Settings</a>
+                    <div class="dropdown-divider"></div>
+					<a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Question-circle me-15"><span class="path1"></span><span class="path2"></span></span>
+                        Help</a>
+					<a class="dropdown-item fs-16" href="#">
+                        <span class="icon-Notifications me-15"><span class="path1"></span><span class="path2"></span></span> 
+                        Privacy</a>
+                  </div>
+                </div>
+                <div class="text-center flex-grow-1">
+                    <div class="text-dark fs-18">Mayra Sibley</div>
+                    <div>
+                        <span class="badge badge-sm badge-dot badge-primary"></span>
+                        <span class="text-muted fs-12">Active</span>
+                    </div>
+                </div>
+                <div class="chat-box-toggle">
+                    <button id="chat-box-toggle" class="waves-effect waves-circle btn btn-circle btn-danger-light h-40 w-40 rounded-circle l-h-45" type="button">
+                      <span class="icon-Close fs-22"><span class="path1"></span><span class="path2"></span></span>
+                    </button>                    
+                </div>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay">   
+                </div>
+                <div class="chat-logs">
+                    <div class="chat-msg user">
+                        <div class="d-flex align-items-center">
+                            <span class="msg-avatar">
+                                <img src="images/avatar/2.jpg" class="avatar avatar-lg">
+                            </span>
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">Mayra Sibley</a>
+                                <p class="text-muted fs-12 mb-0">2 Hours</p>
+                            </div>
+                        </div>
+                        <div class="cm-msg-text">
+                            Hi there, I'm Jesse and you?
+                        </div>
+                    </div>
+                    <div class="chat-msg self">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">You</a>
+                                <p class="text-muted fs-12 mb-0">3 minutes</p>
+                            </div>
+                            <span class="msg-avatar">
+                                <img src="images/avatar/3.jpg" class="avatar avatar-lg">
+                            </span>
+                        </div>
+                        <div class="cm-msg-text">
+                           My name is Anne Clarc.         
+                        </div>        
+                    </div>
+                    <div class="chat-msg user">
+                        <div class="d-flex align-items-center">
+                            <span class="msg-avatar">
+                                <img src="images/avatar/2.jpg" class="avatar avatar-lg">
+                            </span>
+                            <div class="mx-10">
+                                <a href="#" class="text-dark hover-primary fw-bold">Mayra Sibley</a>
+                                <p class="text-muted fs-12 mb-0">40 seconds</p>
+                            </div>
+                        </div>
+                        <div class="cm-msg-text">
+                            Nice to meet you Anne.<br>How can i help you?
+                        </div>
+                    </div>
+                </div><!--chat-log -->
+            </div>
+            <div class="chat-input">      
+                <form>
+                    <input type="text" id="chat-input" placeholder="Send a message..."/>
+                    <button type="submit" class="chat-submit" id="chat-submit">
+                        <span class="icon-Send fs-22"></span>
+                    </button>
+                </form>      
+            </div>
+		</div>
+	</div>
 	
 	<!-- Page Content overlay -->
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
-<script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+	
 	
 	<!-- Vendor JS -->
 	<script src="src/js/vendors.min.js"></script>
 	<script src="src/js/pages/chat-popup.js"></script>
     <script src="assets/icons/feather-icons/feather.min.js"></script>	
+    <script src="assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	</script>
 	
 	<!-- CRMi App -->
 	<script src="src/js/jquery.smartmenus.js"></script>
 	<script src="src/js/menus.js"></script>
 	<script src="src/js/template.js"></script>
 
-	<script>
-
-function loadDoc(c) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-		var ar=JSON.parse(this.responseText);
-		var obj=ar[ar.length-1];
-	  document.getElementById("fullname").innerHTML="Employee Name: "+obj.firstname;
-      document.getElementById("alocdate").innerHTML="Allocated Date: "+obj.alocdate;
-      document.getElementById("status").innerHTML="Status: "+obj.status; 
-    }
-  };
-  xhttp.open("GET", "Welcome/getdata?q=" +c, true);
-  xhttp.send();
-}
-
-
-
-var span = document.getElementsByClassName("close")[0];
-
-var span1 = document.getElementsByClassName("close1")[0];
-
-var modal = document.getElementById("myModal");
-
-var modal1 = document.getElementById("myModal1");
-
-$(document).ready(function(){
-  
-new DataTable('#example');
-
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
-var yyyy = today.getFullYear();
-
-if(dd<10){
-  dd='0'+dd
-} 
-if(mm<10){
-  mm='0'+mm
-} 
-
-today = yyyy+'-'+mm+'-'+dd;
-
-document.getElementById("sdate").setAttribute("min", today);
-document.getElementById("ldate").setAttribute("min", today);
-
-
-});
-
-$(function () {
-        $(".forward").click(function () {
-
-            modal.style.display = "block";
-
-			var c=$(this).attr("dataval");
-
-			document.getElementById("taskid").value=c;
-
-			console.log(c);
-
-  
-        });
-    });
-
-$(function () {
-        $(".backward").click(function () {
-
-            modal1.style.display = "block";
-
-			var c=$(this).attr("dataval");
-
-			console.log(c);
-
-			loadDoc(c);
-
- 
-        });
-    });
-
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }else if(event.target == modal1) {
+	<script src="src/js/pages/extra_taskboard.js"></script>
 	
-	modal1.style.display = "none";
 
-  }
-}
-
-</script>
-	
-	
 </body>
 </html>
-
-

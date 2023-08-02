@@ -56,7 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'welcome';
 
-$route['IN'] = 'welcome/test';
+
+$route['viewtask/(:any)'] = 'welcome/viewtask/$1';
 
 
 

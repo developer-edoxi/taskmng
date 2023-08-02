@@ -44,14 +44,30 @@ class Welcome extends CI_Controller {
 	}
 
 
-	public function test()
+	public function viewtask($slug)
 	{
 
-        // $data['manager']=$this->Users->getmanagers();
+		
 
-		echo "hello";
-        
-		$this->load->view('indianpage');
+		$data['mytask']=$this->Users->getmytask($slug);
+
+		$data['comtask']=$this->Users->getcomptask($slug);
+
+		$this->load->view('viewtask',$data);
+    
+	}
+
+	public function getdata()
+	{
+
+		$q=$this->input->get('q');
+    
+		$data['assignresult']=$this->Users->getassigndata($q);
+
+		$json = json_encode($data['assignresult']);
+
+		echo $json;
+
 
 	}
 
@@ -128,6 +144,54 @@ class Welcome extends CI_Controller {
 				$this->session->set_flashdata('msg','Success');
 
 				redirect(base_url());
+
+				$this->session->unset_flashdata('msg');
+
+			}else{
+
+				$this->session->set_flashdata('msg','Success');
+
+				redirect(base_url());
+
+				$this->session->unset_flashdata('msg');
+
+			}
+		
+
+		}
+
+
+	}
+
+
+	public function updateassigntask()
+	{
+
+
+		if($this->input->post('submit')){
+
+	
+	
+			
+			$data = array(  
+				'taskid'     => $this->input->post('taskid'),  
+				'userid'  => $this->input->post('userid'),  
+                'comment'   => $this->input->post('description'),
+				
+				); 
+
+			$userid=$this->input->post('userid');
+			$response=$this->Users->commenttask($data);
+
+			$response1=$this->Users->updatetaskcomplete($this->input->post('taskid'));
+			
+			if(($response==true)and($response1==true)){
+
+				$this->session->set_flashdata('msg','Success');
+
+				
+
+				redirect(base_url("viewtask/$userid"));
 
 				$this->session->unset_flashdata('msg');
 
