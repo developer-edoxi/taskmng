@@ -7,7 +7,9 @@ var span = document.getElementsByClassName("close")[0];
   
 var modal = document.getElementById("myModal");
 
-var slug = document.getElementById("userslug");
+var slug = document.getElementById("userslug").value;
+
+var path = document.getElementById("path").value;
 
 
 function getImgData() {
@@ -87,7 +89,7 @@ xhttp.onreadystatechange = function() {
 
   }
 };
-xhttp.open("GET", "<?=base_url()?>welcome/getreply?cmid=" +cmid, true);
+xhttp.open("GET",path+"welcome/getreply?cmid=" +cmid, true);
 xhttp.send();
 }
 
@@ -103,7 +105,7 @@ function viewcomment(id,topicid) {
     xhttp.onreadystatechange = function() {
       	if(this.readyState == 4 && this.status == 200) {
           var ar=JSON.parse(this.responseText);
-        //   console.log(ar);
+          console.log(ar);
 
 		for(var i=0;i<ar.length;i++){
 			
@@ -220,7 +222,7 @@ function viewcomment(id,topicid) {
 		  
       }
     };
-    xhttp.open("GET", "<?=base_url()?>welcome/getcomment?tpid="+topicid, true);
+    xhttp.open("GET", path+"welcome/getcomment?tpid="+topicid, true);
     xhttp.send();
   }
 
@@ -236,7 +238,7 @@ function addcomment(tpid,uid,comment,cid) {
 		  console.log(ar);
       }
     };
-    xhttp.open("POST", "<?=base_url()?>welcome/addcomment", true);
+    xhttp.open("POST", path+"welcome/addcomment", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("tpid="+tpid+"&uid="+uid+"&comment="+comment);
 	
@@ -255,7 +257,7 @@ function addcomment(tpid,uid,comment,cid) {
 		  console.log(ar);
       }
     };
-    xhttp.open("POST", "<?=base_url()?>welcome/addreply", true);
+    xhttp.open("POST", path+"welcome/addreply", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("cmid="+cmid+"&uid="+slug+"&reply="+reply);
 
@@ -349,7 +351,7 @@ $(function () {
 
 			}
 			};
-			xhttp.open("POST", "<?=base_url()?>welcome/changetopicstat", true);
+			xhttp.open("POST", path+"welcome/changetopicstat", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("tpid="+val);
   
