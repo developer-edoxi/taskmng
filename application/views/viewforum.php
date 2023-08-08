@@ -472,7 +472,7 @@ echo "<script>alert('$msg');</script>";
 								</form>
 								<p id="closestatus" style="display:none;text-align:center"><b>Discussion is closed</b></p>
 								<hr>
-								<div class="comment-view" id="cv<?=$count?>">
+								<div class="comment-view h-150 overflow-auto" id="cv<?=$count?>">
 									<!-- <h3 class="my-10" style="color:red;">Kiran</h3>
 									<p class="text-fade w-p85 mx-auto">some desciptions</p> -->
 									
