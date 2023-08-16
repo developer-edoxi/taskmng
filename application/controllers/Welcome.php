@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
 
 		$data['manager']=$this->Users->getmanagers();
 
-		$data['employee']=$this->Users->getemployee();
+		$data['employee']=$this->Users->getemployees();
 
 		$data['task']=$this->Users->gettasks();
         
