@@ -94,6 +94,18 @@ public function getmanagers()
 
 }
 
+public function getemployees()
+{
+
+
+        
+        $query=$this->db->query("select * from `user`");
+
+        return $query->result();
+
+
+}
+
 public function getemployee($id)
 {
 
